@@ -11,7 +11,6 @@
 
 <script>
 	export let error, status;
-	console.log(`error`, error);
 </script>
 
 <h1>Error: {status}</h1>

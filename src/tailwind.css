@@ -26,3 +26,12 @@ h3 {
 p {
 	margin-bottom: 1.25rem;
 }
+
+a {
+	text-decoration: underline;
+	color: blue;
+}
+a:hover,
+a:focus-visible {
+	color: red;
+}

@@ -4,7 +4,6 @@
 
 		const postsList = Object.values(posts);
 		const postsMeta = postsList.map((post) => {
-			console.log(post.metadata);
 			return post.metadata;
 		});
 
@@ -28,7 +27,7 @@
 		<ul>
 			<li><a href="/posts/">Blog Home</a></li>
 			{#each posts as post}
-				<li><a href={`/posts/${post.slug}`}>{post.title}</a></li>
+				<li><a sveltekit:prefetch href={`/posts/${post.slug}`}>{post.title}</a></li>
 			{/each}
 		</ul>
 	</aside>
