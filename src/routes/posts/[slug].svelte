@@ -1,16 +1,24 @@
 <script context="module">
 	export async function load({ params }) {
-		const Post = await import(`../../posts/${params.slug}.md`);
-		const { title, date, author } = Post.metadata;
+		try {
+			const Post = await import(`../../posts/${params.slug}.md`);
+			const { title, date, author } = Post.metadata;
 
-		return {
-			props: {
-				Post: Post.default,
-				title,
-				date,
-				author
-			}
-		};
+			return {
+				props: {
+					Post: Post.default,
+					title,
+					date,
+					author
+				}
+			};
+		} catch (e) {
+			return {
+				status: 404,
+				error: 'Womp. Womp. Post not found.'
+				// redirect: '/posts'
+			};
+		}
 	}
 </script>
 
